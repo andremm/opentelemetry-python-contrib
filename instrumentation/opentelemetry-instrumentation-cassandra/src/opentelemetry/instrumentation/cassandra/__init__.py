@@ -22,6 +22,10 @@ using ``CassandraInstrumentor``.
 Usage
 -----
 
+::
+
+    docker run -p 9042:9042 cassandra
+
 .. code:: python
 
     import cassandra.cluster
@@ -31,7 +35,7 @@ Usage
 
     cluster = cassandra.cluster.Cluster()
     session = cluster.connect()
-    rows = session.execute("SELECT * FROM test")
+    rows = session.execute("SELECT * FROM system_schema.keyspaces")
 
 API
 ---
